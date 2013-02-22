@@ -130,7 +130,7 @@ namespace TreeSize
 
         async private Task<long> GetSizeOfFilesInDirectory()
         {
-            return await TaskEx.Run(() =>
+            return await Task.Run(() =>
             {
                 long result = 0;
                 foreach (var file in GetFiles())
