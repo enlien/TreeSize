@@ -33,12 +33,12 @@ namespace TreeSize
         private void SetDefaultSelectedDirectory()
         {
             SelectedDirectory = new DirectoryItem(DefaultStartupDirectory, DefaultStartupDirectory);
-            txtSelectedDirectory.Text = SelectedDirectory.FullPathName;            
+            txtSelectedDirectory.Text = SelectedDirectory.FullPath;            
         }        
 
         private void btnDirectoryBrowser_Click(object sender, EventArgs e)
         {
-            directoryPickerDialog.SelectedPath = SelectedDirectory.FullPathName;
+            directoryPickerDialog.SelectedPath = SelectedDirectory.FullPath;
             if (directoryPickerDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 SetSelectedDirectory(directoryPickerDialog.SelectedPath);
@@ -48,7 +48,7 @@ namespace TreeSize
         private void SetSelectedDirectory(string fullPath)
         {
             SelectedDirectory = new DirectoryItem(fullPath, fullPath);
-            txtSelectedDirectory.Text = SelectedDirectory.FullPathName;            
+            txtSelectedDirectory.Text = SelectedDirectory.FullPath;            
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)
@@ -124,7 +124,7 @@ namespace TreeSize
             }
 
             SelectedDirectory = (DirectoryItem) e.Node.Tag;
-            txtSelectedDirectory.Text = SelectedDirectory.FullPathName;
+            txtSelectedDirectory.Text = SelectedDirectory.FullPath;
             ClearDirectoryTreeView();            
             ShowProcessing();
             ShowSubdirectories(SelectedDirectory);

@@ -9,7 +9,7 @@ namespace TreeSize
     internal class DirectoryItem
     {
         public string Name { get; set; }
-        public string FullPathName { get; set; }
+        public string FullPath { get; set; }
         
         private List<DirectoryItem> Directories { get; set; }
         private List<FileItem> Files { get; set; }
@@ -21,7 +21,7 @@ namespace TreeSize
         {            
             if (Directory.Exists(fullPath))
             {
-                FullPathName = fullPath;
+                FullPath = fullPath;
             }
             else
             {
@@ -33,7 +33,7 @@ namespace TreeSize
 
         public override string ToString()
         {
-            return FullPathName;
+            return FullPath;
         }
 
         public List<DirectoryItem> GetDirectories()
@@ -117,7 +117,7 @@ namespace TreeSize
         {
             if (CurrentDirectoryInfo == null)
             {
-                CurrentDirectoryInfo = new DirectoryInfo(FullPathName);
+                CurrentDirectoryInfo = new DirectoryInfo(FullPath);
             }
             return CurrentDirectoryInfo;
         }
