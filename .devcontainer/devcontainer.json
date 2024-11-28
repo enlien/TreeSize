@@ -4,5 +4,10 @@
     "image": "mcr.microsoft.com/devcontainers/dotnet:0-7.0",
     "features": {
       "ghcr.io/devcontainers/features/dotnet:1": {}
+    },
+    "hostRequirements": {
+         "cpus": 8,
+         "memory": "8gb",
+         "storage": "32gb"
     }
 }
